@@ -270,7 +270,7 @@ def main():
             st.text(entry)
         if st.button("🔄 重新开始"):
             del st.session_state.game
-            st.experimental_rerun()
+            st.rerun()
         return
 
     # 显示当前回合
@@ -297,8 +297,8 @@ def main():
 
     # 推进回合按钮
     if st.button("⏭️ 打出此牌，推进一回合"):
-        game.run_round(selected_card)
-        st.experimental_rerun()
+       game.run_round(selected_card)
+       st.rerun()  # 原来是 st.experimental_rerun()
 
     # 显示最近日志
     st.subheader("📋 最近事件日志")
